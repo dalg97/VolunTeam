@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VolunTeam - Voluntariado</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 
   <header>
@@ -19,7 +21,7 @@
       <a href="sobre-nosotros.html"><i class="fas fa-envelope"></i> Sobre Nosotros</a>
     </nav>
     <a href="perfil.html" class="fa-solid fa-user-circle" title="Mi perfil"
-       style="position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.4rem; color: white;"></a>
+      style="position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.4rem; color: white;"></a>
   </header>
 
   <main>
@@ -28,43 +30,46 @@
       <div class="voluntariado-grid">
 
         <div class="card-voluntariado">
-          <img src="assets/img/portfolio/voluntariado1.jpg" alt="Playa Hermosa" />
+          <img src="img/voluntariado1.jpg" alt="Playa Hermosa" />
           <div class="info">
             <h3>Recolección de Residuos - Playa Hermosa</h3>
-            <button class="btn-detalle">Ver Detalles</button>
+            <p>Únete a mejorar nuestras playas.</p>
             <div class="details">
-              <p><strong>Lugar:</strong> Puntarenas</p>
               <p><strong>Fecha:</strong> 24 de agosto</p>
               <p><strong>Hora:</strong> 8:00 am - 12:00 md</p>
+              <p><strong>Lugar:</strong> Puntarenas</p>
               <p><strong>Cupos disponibles:</strong> 20</p>
+              <a href="#" class="btn">Registrarse</a>
             </div>
           </div>
         </div>
 
         <div class="card-voluntariado">
-          <img src="assets/img/portfolio/voluntariado2.jpg" alt="Lectura Alajuela" />
+          <img src="img/voluntariado2.jpg" alt="Lectura Alajuela" />
           <div class="info">
             <h3>Festival de Lectura Infantil</h3>
-            <button class="btn-detalle">Ver Detalles</button>
+            <p>Fomenta la lectura con niños de comunidades vulnerables.</p>
             <div class="details">
-              <p><strong>Lugar:</strong> Biblioteca de Alajuela</p>
               <p><strong>Fecha:</strong> 2 de septiembre</p>
               <p><strong>Hora:</strong> 9:30 am - 1:30 pm</p>
+              <p><strong>Lugar:</strong> Biblioteca de Alajuela</p>
               <p><strong>Cupos disponibles:</strong> 10</p>
+              <a href="#" class="btn">Registrarse</a>
             </div>
           </div>
         </div>
 
         <div class="card-voluntariado">
-          <img src="assets/img/portfolio/voluntariado4.jpg" alt="Hogar Heredia" />
+          <img src="img/voluntariado4.jpg" alt="Hogar Heredia" />
           <div class="info">
             <h3>Apoyo a adultos mayores</h3>
-            <button class="btn-detalle">Ver Detalles</button>
+            <p>Jornadas de acompañamiento y recreación.</p>
             <div class="details">
-              <p><strong>Lugar:</strong> Heredia</p>
               <p><strong>Fecha:</strong> 15 de septiembre</p>
               <p><strong>Hora:</strong> 10:00 am - 3:00 pm</p>
+              <p><strong>Lugar:</strong> Heredia</p>
               <p><strong>Cupos disponibles:</strong> 8</p>
+              <a href="#" class="btn">Registrarse</a>
             </div>
           </div>
         </div>
@@ -79,15 +84,14 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll(".btn-detalle").forEach(button => {
-        button.addEventListener("click", function (e) {
-          e.stopPropagation();
-          const card = this.closest(".card-voluntariado");
-          card.classList.toggle("expanded");
+      document.querySelectorAll(".card-voluntariado").forEach(card => {
+        card.addEventListener("click", function () {
+          this.classList.toggle("expanded");
         });
       });
     });
   </script>
 
 </body>
+
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VolunTeam - Sobre Nosotros</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-hands-helping"></i> VolunTeam</h1>
+    <nav>
+      <a href="home.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="voluntariado.html"><i class="fas fa-hand-holding-heart"></i> Voluntariado</a>
+      <a href="impacto.html"><i class="fas fa-seedling"></i> Impacto</a>
+      <a href="recursos.html"><i class="fas fa-folder-open"></i> Recursos</a>
+      <a href="sobre-nosotros.html"><i class="fas fa-envelope"></i> Sobre Nosotros</a>
+    </nav>
+    <a href="perfil.html" class="fa-solid fa-user-circle" title="Mi perfil"
+       style="position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.4rem; color: white;"></a>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <h2><i class="fas fa-users"></i> ¿Quiénes Somos?</h2>
+      <p class="intro-text">
+        Somos una plataforma que conecta personas solidarias con causas que realmente importan. VolunTeam nació para facilitar la participación ciudadana en actividades de alto impacto social,
+        apoyando comunidades en Costa Rica junto con ONGs, escuelas, municipalidades y voluntarios independientes.
+      </p>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3><i class="fas fa-phone-alt"></i> Contacto</h3>
+        <p><strong>Email:</strong> contacto@volunteam.org</p>
+        <p><strong>Teléfono:</strong> +506 800-VOLUNTEAM</p>
+        <ul>
+          <li>Daniela Rojas – Dirección general</li>
+          <li>Marco Jiménez – Logística</li>
+          <li>Andrea Rivera – Comunicación</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3><i class="fas fa-hashtag"></i> Redes Sociales</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>Síguenos y entérate de nuestros próximos proyectos.</p>
+      </div>
+    </div>
+
+    <section class="form-box">
+      <h3><i class="fas fa-question-circle"></i> ¿Tienes dudas? Escríbenos</h3>
+      <form>
+        <label for="nombre">Nombre:</label><br />
+        <input type="text" id="nombre" name="nombre" required /><br /><br />
+        <label for="correo">Correo:</label><br />
+        <input type="email" id="correo" name="correo" required /><br /><br />
+        <label for="mensaje">Mensaje:</label><br />
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br /><br />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 VolunTeam. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>VolunTeam - Voluntariado</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-hands-helping"></i> VolunTeam</h1>
+    <nav>
+      <a href="home.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="voluntariado.html"><i class="fas fa-hand-holding-heart"></i> Voluntariado</a>
+      <a href="impacto.html"><i class="fas fa-seedling"></i> Impacto</a>
+      <a href="recursos.html"><i class="fas fa-folder-open"></i> Recursos</a>
+      <a href="sobre-nosotros.html"><i class="fas fa-envelope"></i> Sobre Nosotros</a>
+    </nav>
+    <a href="perfil.html" class="fa-solid fa-user-circle" title="Mi perfil"
+       style="position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.4rem; color: white;"></a>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <h2><i class="fas fa-hand-holding-heart"></i> Voluntariados Disponibles</h2>
+      <div class="voluntariado-grid">
+
+        <div class="card-voluntariado">
+          <img src="assets/img/portfolio/voluntariado1.jpg" alt="Playa Hermosa" />
+          <div class="info">
+            <h3>Recolección de Residuos - Playa Hermosa</h3>
+            <button class="btn-detalle">Ver Detalles</button>
+            <div class="details">
+              <p><strong>Lugar:</strong> Puntarenas</p>
+              <p><strong>Fecha:</strong> 24 de agosto</p>
+              <p><strong>Hora:</strong> 8:00 am - 12:00 md</p>
+              <p><strong>Cupos disponibles:</strong> 20</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-voluntariado">
+          <img src="assets/img/portfolio/voluntariado2.jpg" alt="Lectura Alajuela" />
+          <div class="info">
+            <h3>Festival de Lectura Infantil</h3>
+            <button class="btn-detalle">Ver Detalles</button>
+            <div class="details">
+              <p><strong>Lugar:</strong> Biblioteca de Alajuela</p>
+              <p><strong>Fecha:</strong> 2 de septiembre</p>
+              <p><strong>Hora:</strong> 9:30 am - 1:30 pm</p>
+              <p><strong>Cupos disponibles:</strong> 10</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-voluntariado">
+          <img src="assets/img/portfolio/voluntariado4.jpg" alt="Hogar Heredia" />
+          <div class="info">
+            <h3>Apoyo a adultos mayores</h3>
+            <button class="btn-detalle">Ver Detalles</button>
+            <div class="details">
+              <p><strong>Lugar:</strong> Heredia</p>
+              <p><strong>Fecha:</strong> 15 de septiembre</p>
+              <p><strong>Hora:</strong> 10:00 am - 3:00 pm</p>
+              <p><strong>Cupos disponibles:</strong> 8</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 VolunTeam. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".btn-detalle").forEach(button => {
+        button.addEventListener("click", function (e) {
+          e.stopPropagation();
+          const card = this.closest(".card-voluntariado");
+          card.classList.toggle("expanded");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

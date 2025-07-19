@@ -248,6 +248,54 @@ form label {
   cursor: pointer;
 }
 
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+#cerrar-modal {
+  position: absolute;
+  top: 10px; right: 10px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mensaje-registro {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 10000;
+}
+.mensaje-registro.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+}
 /* =================== SOBRE NOSOTROS =================== */
 .intro-text {
   max-width: 800px;
@@ -301,14 +349,4 @@ footer {
   background-color: #4CAF50;
   color: white;
   margin-top: 2rem;
-}
-/* =================== INTERACCIÓN: EXPANSIÓN EVENTOS =================== */
-.card-evento .details {
-  display: none;
-  margin-top: 0.8rem;
-  font-size: 0.95rem;
-}
-
-.card-evento.expanded .details {
-  display: block;
 }

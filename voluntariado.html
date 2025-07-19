@@ -24,7 +24,16 @@
       style="position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.4rem; color: white;"></a>
   </header>
 
+  <div id="mensaje-registro" class="mensaje-registro"></div>
+
   <main>
+    <div id="modal-detalle" class="modal">
+      <div class="modal-contenido">
+        <button id="cerrar-modal">&times;</button>
+        <div id="contenido-detalle"></div>
+      </div>
+    </div>
+
     <section class="seccion">
       <h2><i class="fas fa-hand-holding-heart"></i> Voluntariados Disponibles</h2>
       <div class="voluntariado-grid">
@@ -45,7 +54,7 @@
         </div>
 
         <div class="card-voluntariado">
-          <img src="img/voluntariado2.jpg" alt="Lectura Alajuela" />
+          <img src="img/voluntariado2.webp" alt="Lectura Alajuela" />
           <div class="info">
             <h3>Festival de Lectura Infantil</h3>
             <p>Fomenta la lectura con niños de comunidades vulnerables.</p>
@@ -74,6 +83,51 @@
           </div>
         </div>
 
+        <div class="card-voluntariado">
+          <img src="img/voluntariado11.jpg" alt="Playa Hermosa" />
+          <div class="info">
+            <h3>Restauración de Libros</h3>
+            <p>Te invitamos a participar en nuestra jornada de restauración de libros en la biblioteca.</p>
+            <div class="details">
+              <p><strong>Fecha:</strong> 28 de agosto</p>
+              <p><strong>Hora:</strong> 9:00 am - 2:00 pm</p>
+              <p><strong>Lugar:</strong> Biblioteca Municipal de Pérez Zeledón</p>
+              <p><strong>Cupos disponibles:</strong> 11</p>
+              <a href="#" class="btn">Registrarse</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-voluntariado">
+          <img src="img/voluntariado12.jpg" alt="Playa Hermosa" />
+          <div class="info">
+            <h3>Colores que Unen - Arte Comunitario</h3>
+            <p>Aporta tu creatividad pintando murales o decorando espacios comunitarios</p>
+            <div class="details">
+              <p><strong>Fecha:</strong> 16 de agosto</p>
+              <p><strong>Hora:</strong> 8:00 am - 2:00 pm</p>
+              <p><strong>Lugar:</strong> Plaza de la cultura, San José</p>
+              <p><strong>Cupos disponibles:</strong> 8</p>
+              <a href="#" class="btn">Registrarse</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-voluntariado">
+          <img src="img/voluntariado13.png" alt="Playa Hermosa" />
+          <div class="info">
+            <h3>Aliados del Rescate - Zoo Ave</h3>
+            <p>Sé parte del esfuerzo por proteger la fauna silvestre de Costa Rica.</p>
+            <div class="details">
+              <p><strong>Fecha:</strong> 2 de septiembre</p>
+              <p><strong>Hora:</strong> 7:00 am - 2:00 pm</p>
+              <p><strong>Lugar:</strong> ZooAve, La Garita</p>
+              <p><strong>Cupos disponibles:</strong> 15</p>
+              <a href="#" class="btn">Registrarse</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
@@ -83,11 +137,49 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll(".card-voluntariado").forEach(card => {
+      document.addEventListener("DOMContentLoaded", function () {
+      const cards = document.querySelectorAll(".card-voluntariado");
+      const modal = document.getElementById("modal-detalle");
+      const contenidoDetalle = document.getElementById("contenido-detalle");
+      const btnCerrar = document.getElementById("cerrar-modal");
+      const mensaje = document.getElementById("mensaje-registro");
+
+      cards.forEach(card => {
         card.addEventListener("click", function () {
-          this.classList.toggle("expanded");
+          const info = this.querySelector(".info").cloneNode(true);
+
+          contenidoDetalle.innerHTML = "";
+          contenidoDetalle.appendChild(info);
+          modal.style.display = "flex";
+
+          setTimeout(() => {
+            const botonRegistro = contenidoDetalle.querySelector(".btn");
+            if (botonRegistro) {
+              botonRegistro.addEventListener("click", function (e) {
+                e.preventDefault();
+               
+                mensaje.textContent = "¡Registro exitoso!";
+                mensaje.classList.add("mostrar");
+
+                modal.style.display = "none";
+
+                setTimeout(() => {
+                  mensaje.classList.remove("mostrar");
+                }, 3000);
+              });
+            }
+          }, 0);
         });
+      });
+
+      btnCerrar.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
       });
     });
   </script>

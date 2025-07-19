@@ -95,16 +95,48 @@ h2 {
 
 /* =================== GALERÍA =================== */
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  display: flex;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .galeria img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 500px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 8px;
 }
+
+.galeria-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .flecha.izquierda {
+    left: 0;
+  }
+
+  .flecha.derecha {
+    right: 0;
+  }
 
 /* =================== EVENTOS DESTACADOS =================== */
 .eventos-grid {
@@ -163,8 +195,8 @@ form label {
 /* =================== VOLUNTARIADO =================== */
 .voluntariado-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
   margin-top: 1rem;
 }
 

@@ -58,15 +58,41 @@
     <!-- GALERÍA -->
     <section class="seccion">
       <h2><i class="fas fa-image"></i> Galería de Eventos</h2>
-      <div class="galeria">
-        <img src="assets/img/portfolio/voluntariado1.jpg" alt="Evento 1" />
-        <img src="assets/img/portfolio/voluntariado2.jpg" alt="Evento 2" />
-        <img src="assets/img/portfolio/voluntariado3.jpeg" alt="Evento 3" />
-        <img src="assets/img/portfolio/voluntariado4.jpg" alt="Evento 4" />
-      </div>
+      <div class="galeria-container">
+        <button class="flecha izquierda" onclick="moverGaleria(-1)">←</button>
+
+        <div class="galeria" id="galeria">
+          <img src="img/voluntariado7.jpg" alt="Evento 1" />
+          <img src="img/voluntariado5.jpg" alt="Evento 2" />
+          <img src="img/voluntariado21.jpg" alt="Evento 3" />
+          <img src="img/voluntariado6.jpg" alt="Evento 4" />
+          <img src="img/voluntariado3.jpeg" alt="Evento 4" />
+          <img src="img/voluntariado8.jpg" alt="Evento 4" />
+          <img src="img/voluntariado9.webp" alt="Evento 4" />
+          <img src="img/voluntariado10.png" alt="Evento 4" />
+        </div>
+
+        <button class="flecha derecha" onclick="moverGaleria(1)">→</button>
+      </div>  
     </section>
 
   </main>
+  <script>
+    let posicionGaleria = 0;
+    const anchoImagen = 310; // ancho + gap aproximado
+
+    function moverGaleria(direccion) {
+      const galeria = document.getElementById('galeria');
+      const maxScroll = galeria.scrollWidth - galeria.clientWidth;
+
+      posicionGaleria += direccion * anchoImagen;
+
+      if (posicionGaleria < 0) posicionGaleria = 0;
+      if (posicionGaleria > maxScroll) posicionGaleria = maxScroll;
+
+      galeria.style.transform = `translateX(-${posicionGaleria}px)`;
+    }
+  </script>
 
   <footer>
     <p>&copy; 2025 VolunTeam. Todos los derechos reservados.</p>

@@ -341,7 +341,51 @@ form label {
   border-radius: 12px;
   margin-top: 2rem;
 }
+/* =================== PERFIL =================== */
 
+.card.perfil-card {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card.perfil-card:hover {
+  transform: scale(1.02);
+}
+
+.perfil-header {
+  margin-bottom: 1.5rem;
+}
+
+.perfil-header .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #4CAF50;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.perfil-header h3 {
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+.perfil-header .ubicacion {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.perfil-detalles p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
 /* =================== FOOTER =================== */
 footer {
   text-align: center;

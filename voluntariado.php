@@ -5,7 +5,7 @@ if ($conexion->connect_error) {
     die("Conexión fallida: " . $conexion->connect_error);
 }
 
-$sql = "SELECT * FROM evento;";
+$sql = "SELECT * FROM evento WHERE destacado=FALSE";
 $resultado = $conexion->query($sql);
 ?>
 

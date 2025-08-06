@@ -7,6 +7,7 @@ CREATE TABLE usuario (
     direccion_usuario VARCHAR(255),
     edad INT,
     correo VARCHAR(50),
+    passwd VARCHAR(255),
     intereses VARCHAR(255),
     experiencia VARCHAR(255)
 );

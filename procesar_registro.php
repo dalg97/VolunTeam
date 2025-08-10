@@ -11,10 +11,10 @@
   $passwd = $_POST['passwd']; // sin hash, por ahora
   $intereses = $_POST['intereses'];
   $experiencia = $_POST['experiencia'];
-
+  $hash = password_hash($password, PASSWORD_DEFAULT);
 
   $sql = "INSERT INTO usuario (nombre_usuario, direccion_usuario, edad, correo, passwd, intereses, experiencia)
-          VALUES ('$nombre_usuario', '$direccion', $edad, '$correo', '$passwd', '$intereses', '$experiencia')";
+          VALUES ('$nombre_usuario', '$direccion', $edad, '$correo', '$hash', '$intereses', '$experiencia')";
 
   $registro_exitoso = false;
   if ($conexion->query($sql) === TRUE) {

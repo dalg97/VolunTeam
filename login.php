@@ -10,16 +10,7 @@
 <body>
 
   <header>
-    <h1><i class="fas fa-hands-helping"></i> VolunTeam</h1>
-    <nav>
-      <a href="home.html"><i class="fas fa-home"></i> Inicio</a>
-      <a href="voluntariado.php"><i class="fas fa-hand-holding-heart"></i> Voluntariado</a>
-      <a href="impacto.html"><i class="fas fa-seedling"></i> Impacto</a>
-      <a href="recursos.html"><i class="fas fa-folder-open"></i> Recursos</a>
-      <a href="sobre-nosotros.html"><i class="fas fa-envelope"></i> Sobre Nosotros</a>
-    </nav>
-    <a href="perfil.php" class="fa-solid fa-user-circle" title="Mi perfil"
-       style="position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.4rem; color: white;"></a>
+    <h1><i class="fas fa-hands-helping"></i>VolunTeam</h1>
   </header>
 
   <main>
@@ -36,6 +27,7 @@
 
           <button type="submit" class="btn">Entrar</button>
         </form>
+        <p>¿No tienes cuenta? <a href="registro.php">Regístrate</a></p>
       </div>
     </section>
   </main>

@@ -4,26 +4,33 @@
     if ($conexion->connect_error) {
         die("Conexión fallida: " . $conexion->connect_error);
     }
-    $correo = trim($_POST['correo']);
-    $passwd = $_POST['passwd'];
 
-    $sql = "SELECT * FROM usuario WHERE correo = '$correo'";
-    $resultado = $conexion->query($sql);
-
-    if ($resultado->num_rows === 1) {
-        
-        $usuario = $resultado->fetch_assoc();
-        if ($passwd === $usuario['passwd']) {
-
-            $_SESSION['id_usuario'] = $usuario['id_usuario'];
-            $_SESSION['nombre_usuario'] = $usuario['nombre_usuario'];
-            $_SESSION['correo'] = $usuario['correo'];
-            header("Location: home.php");
-            exit();
-        } else {
-            echo "Contraseña incorrecta.";
-        }
-    } else {
-        echo "Usuario no encontrado.";
+    if (isset($_SESSION['user_id'])) {
+    header('Location: home.php');
+    exit;
     }
+    $error = null;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $correo = filter_var(trim($_POST['correo'] ?? ''), FILTER_VALIDATE_EMAIL);
+    $password = $_POST['password'] ?? '';
+
+    if (!$correo || !$password) {
+        $error = 'Correo o contraseña inválidos.';
+    } else {
+        $stmt = $pdo->prepare('SELECT id_usuario, nombre_usuario, correo, passwd FROM usuario WHERE correo = :correo LIMIT 1');
+        $stmt->execute([':correo' => $correo]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($password, $user['passwd'])) {
+            session_regenerate_id(true);
+            $_SESSION['user_id'] = $user['id_usuario'];
+            $_SESSION['user_name'] = $user['nombre_usuario'];
+            $_SESSION['user_email'] = $user['correo'];
+            header('Location: home.php');
+            exit;
+        } else {
+            $error = 'Credenciales incorrectas.';
+        }
+    }
+}
 ?>

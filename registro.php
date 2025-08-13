@@ -1,48 +1,52 @@
+<?php require_once 'scripts/procesar_registro.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Registro de Usuario</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VolunTeam - Registro</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
+  <header>
+    <h1><i class="fas fa-hands-helping"></i> VolunTeam</h1>
+  </header>
   <main>
-    <section class="seccion">
-      <h2><i class="fas fa-user-plus"></i> Registrarse</h2>
+    <section class="seccion login-card">
+      <h2>Crear cuenta</h2>
+      <?php if (!empty($errors)): ?>
+        <div class="error">
+          <?php foreach ($errors as $e): ?><p><?= htmlspecialchars($e) ?></p><?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+      <form method="post" action="registro.php" class="form-registro">
+        <label>Nombre</label>
+        <input type="text" name="nombre" required>
 
-      <div class="card perfil-card">
-        <form action="procesar_registro.php" method="POST">
-          <label>Nombre:</label><br>
-          <input type="text" name="nombre_usuario" required><br>
+        <label>Dirección</label>
+        <input type="text" name="direccion">
 
-          <label>Dirección:</label><br>
-          <input type="text" name="direccion_usuario" required><br>
+        <label>Edad</label>
+        <input type="number" name="edad" min="1">
 
-          <label>Edad:</label><br>
-          <input type="number" name="edad" required><br>
+        <label>Correo</label>
+        <input type="email" name="correo" required>
 
-          <label>Correo electrónico:</label><br>
-          <input type="email" name="correo" required><br>
+        <label>Contraseña</label>
+        <input type="password" name="password" required>
 
-          <label>Contraseña:</label><br>
-          <input type="password" name="passwd" required><br>
+        <label>Intereses</label>
+        <input type="text" name="intereses">
 
-          <label>Intereses:</label><br>
-          <input type="text" name="intereses"><br>
-
-          <label>Experiencia:</label><br>
-          <input type="text" name="experiencia"><br><br>
-
-          <button type="submit" class="btn">Crear cuenta</button>
-        </form>
-      </div>
+        <label>Experiencia</label>
+        <textarea name="experiencia"></textarea>
+        <button type="submit" class="btn">Registrar</button>
+      </form>
+      <p>¿Ya tienes cuenta? <a href="login.php">Iniciar sesión</a></p>
     </section>
   </main>
-
+  <footer>
+    <p>&copy; 2025 VolunTeam. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>

@@ -1,14 +1,4 @@
-<?php
-$conexion = new mysqli("localhost", "volunt_user", "jdu2352h", "volunteam");
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
-}
-
-// Consulta los eventos
-$sql = "SELECT * FROM evento WHERE destacado=TRUE";
-$resultado = $conexion->query($sql);
-?>
-
+<?php require_once "scripts/procesar_home.php"; ?>
 
 <!DOCTYPE html>
 <html lang="es">

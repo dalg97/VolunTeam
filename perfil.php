@@ -1,11 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['id_usuario'])) {
-    echo "⚠ Acceso no autorizado. Por favor inicia sesión.";
-    exit();
-}
-?>
-
+<?php require_once "scripts/procesar_perfil.php"; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,46 +9,58 @@ if (!isset($_SESSION['id_usuario'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-
   <header>
     <h1><i class="fas fa-hands-helping"></i> VolunTeam</h1>
     <nav>
-      <a href="home.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="home.php"><i class="fas fa-home"></i> Inicio</a>
       <a href="voluntariado.php"><i class="fas fa-hand-holding-heart"></i> Voluntariado</a>
+      <a href="perfil.php" class="active"><i class="fas fa-user-circle"></i> Perfil</a>
       <a href="impacto.html"><i class="fas fa-seedling"></i> Impacto</a>
       <a href="recursos.html"><i class="fas fa-folder-open"></i> Recursos</a>
       <a href="sobre-nosotros.html"><i class="fas fa-envelope"></i> Sobre Nosotros</a>
     </nav>
-    <a href="perfil.php" class="fa-solid fa-user-circle" title="Mi perfil"
-       style="position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.4rem; color: white;"></a>
+    <div style="position: absolute; top: 1.2rem; right: 1.5rem; color: white;">
+      <a href="perfil.php" style="color: inherit; text-decoration: none; margin-right: 0.5rem; display: inline-flex; align-items: center; gap: 0.3rem;"><i class="fa-solid fa-user"></i> <?= htmlspecialchars($_SESSION['user_name']) ?></span>
+      <a href="logout.php" class="btn" style="background:transparent; border:1px solid #fff; color:#fff; padding:0.2rem 0.5rem; border-radius:6px; text-decoration:none;">Salir</a>
+    </div>
   </header>
-
   <main>
     <section class="seccion">
-      <h2><i class="fas fa-user-circle"></i> Mi Perfil</h2>
-
+      <h2>Mi Perfil</h2>
       <div class="card perfil-card">
         <div class="perfil-header">
           <img src="img/foto-perfil.jpg" alt="foto-perfil" class="avatar"/>
-          <h3><?php echo $_SESSION['nombre_usuario']; ?></h3>
-          <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <?php echo $_SESSION['direccion_usuario'] ?? 'Ubicación no disponible'; ?></p>
+          <h3><?= htmlspecialchars($_SESSION['user_name']) ?></h3>
+          <!-- Puedes agregar más info real si la tienes en sesión o BD -->
         </div>
         <div class="perfil-detalles">
-          <p><strong>Edad:</strong> <?php echo $_SESSION['edad'] ?? 'N/A'; ?> años</p>
-          <p><strong>Correo:</strong> <?php echo $_SESSION['correo']; ?></p>
-          <p><strong>Intereses:</strong> <?php echo $_SESSION['intereses'] ?? 'No especificado'; ?></p>
-          <p><strong>Experiencia:</strong> <?php echo $_SESSION['experiencia'] ?? 'No especificado'; ?></p>
-          <p><strong>Rol:</strong> <?php echo $_SESSION['rol']; ?></p>
-          <a href="logout.php" class="btn">Cerrar sesión</a>
+          <p><strong>Correo:</strong> <?= htmlspecialchars($_SESSION['user_email']) ?></p>
+          <!-- Otros detalles del usuario -->
         </div>
       </div>
+      <section class="seccion">
+        <h2>Eventos registrados</h2>
+        <?php if (count($eventos) === 0): ?>
+          <p>No estás registrado en ningún evento.</p>
+        <?php else: ?>
+          <ul class="lista-eventos">
+            <?php foreach ($eventos as $evento): ?>
+              <li>
+                <h3><?= htmlspecialchars($evento['nombre_evento']) ?></h3>
+                <p><?= htmlspecialchars($evento['descripcion_evento']) ?></p>
+                <p><strong>Fecha:</strong> <?= date("d/m/Y", strtotime($evento['fecha_evento'])) ?></p>
+                <p><strong>Hora:</strong> <?= date("g:i a", strtotime($evento['hora_evento'])) ?></p>
+                <p><strong>Lugar:</strong> <?= htmlspecialchars($evento['lugar_evento']) ?></p>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
+      </section>
 
     </section>
   </main>
-
   <footer>
     <p>&copy; 2025 VolunTeam. Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>

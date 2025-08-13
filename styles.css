@@ -141,8 +141,9 @@ h2 {
 /* =================== EVENTOS DESTACADOS =================== */
 .eventos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 1rem;
 }
 
 .espacio-foto {
@@ -159,6 +160,15 @@ h2 {
   height: 100%;
   object-fit: cover;
   display: block;
+  
+.card-evento {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
 }
 /* =================== TESTIMONIOS =================== */
 .testimonios-grid {
@@ -394,40 +404,33 @@ footer {
   color: white;
   margin-top: 2rem;
 }
-.perfil-menu {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
-  font-size: 1.4rem;
-  color: white;
+
+/* Contenedor de la tarjeta de login */
+.login-card {
+    max-width: 400px;        /* ancho máximo */
+    margin: 2rem auto;       /* centrado horizontal */
+    background: #fff;        /* fondo blanco */
+    padding: 2rem;           /* espacio interno */
+    border-radius: 10px;     /* bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra suave */
+    text-align: center;      /* texto centrado */
 }
 
-.perfil-menu i {
-  cursor: pointer;
+/* Campos de formulario */
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    width: 100%;             /* ocupan el ancho del contenedor */
+    padding: 0.6rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
 }
 
-.menu-opciones {
-  display: none;
-  position: absolute;
-  top: 2rem;
-  right: 0;
-  background-color: white;
-  color: #333;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  z-index: 100;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.menu-opciones a {
-  display: block;
-  text-decoration: none;
-  color: #333;
-  padding: 0.3rem 0;
-}
-
-.menu-opciones a:hover {
-  color: #0a7f7f;
-  font-weight: bold;
+/* Botón de login */
+.login-card button.btn {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    margin-top: 1rem;
 }

@@ -1,5 +1,6 @@
 <?php require_once "scripts/procesar_home.php"; ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,7 +24,7 @@
 
     <!-- Mostrar nombre de usuario y logout -->
     <div style="position: absolute; top: 1.2rem; right: 1.5rem; color: white;">
-      <span style="margin-right:0.5rem;"><i class="fa-solid fa-user"></i> <?= htmlspecialchars($_SESSION['user_name']) ?></span>
+      <a href="perfil.php" style="color: inherit; text-decoration: none; margin-right: 0.5rem; display: inline-flex; align-items: center; gap: 0.3rem;"><i class="fa-solid fa-user"></i> <?= htmlspecialchars($_SESSION['user_name']) ?></span>
       <a href="logout.php" class="btn" style="background:transparent; border:1px solid #fff; color:#fff; padding:0.2rem 0.5rem; border-radius:6px; text-decoration:none;">Salir</a>
     </div>
   </header>
@@ -63,7 +64,6 @@
           </div>
         <?php endwhile; ?>
 
-        <!-- Resto de tus cards -->
       </div>
     </section>
   </main>

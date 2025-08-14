@@ -14,7 +14,7 @@
   <header>
     <h1><i class="fas fa-hands-helping"></i> VolunTeam</h1>
     <nav>
-      <a href="home.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="home.php"><i class="fas fa-home"></i> Inicio</a>
       <a href="voluntariado.php"><i class="fas fa-hand-holding-heart"></i> Voluntariado</a>
       <a href="impacto.html"><i class="fas fa-seedling"></i> Impacto</a>
       <a href="recursos.html"><i class="fas fa-folder-open"></i> Recursos</a>

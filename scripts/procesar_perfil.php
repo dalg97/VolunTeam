@@ -11,7 +11,7 @@ if ($conexion->connect_error) {
 }
 $id_usuario = intval($_SESSION['user_id']);
 $sql = $conexion->prepare(
-    "SELECT e.nombre_evento, e.descripcion_evento, e.fecha_evento, e.hora_evento, e.lugar_evento 
+    "SELECT e.nombre_evento, e.fecha_evento, e.hora_evento, e.lugar_evento 
      FROM evento e 
      INNER JOIN usuario_evento ue ON e.id_evento = ue.id_evento 
      WHERE ue.id_usuario = ?"

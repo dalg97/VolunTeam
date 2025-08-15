@@ -47,7 +47,6 @@
             <?php foreach ($eventos as $evento): ?>
               <li>
                 <h3><?= htmlspecialchars($evento['nombre_evento']) ?></h3>
-                <p><?= htmlspecialchars($evento['descripcion_evento']) ?></p>
                 <p><strong>Fecha:</strong> <?= date("d/m/Y", strtotime($evento['fecha_evento'])) ?></p>
                 <p><strong>Hora:</strong> <?= date("g:i a", strtotime($evento['hora_evento'])) ?></p>
                 <p><strong>Lugar:</strong> <?= htmlspecialchars($evento['lugar_evento']) ?></p>

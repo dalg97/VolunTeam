@@ -29,9 +29,9 @@
       <h2>Mi Perfil</h2>
       <div class="card perfil-card">
         <div class="perfil-header">
-          <img src="img/foto-perfil.jpg" alt="foto-perfil" class="avatar"/>
+          <img src="img/perfil.jpeg" alt="perfil" class="avatar"/>
           <h3><?= htmlspecialchars($_SESSION['user_name']) ?></h3>
-          <!-- Puedes agregar más info real si la tienes en sesión o BD -->
+  
         </div>
         <div class="perfil-detalles">
           <p><strong>Correo:</strong> <?= htmlspecialchars($_SESSION['user_email']) ?></p>

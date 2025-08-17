@@ -15,7 +15,7 @@
     <nav>
       <a href="home.php"><i class="fas fa-home"></i> Inicio</a>
       <a href="voluntariado.php"><i class="fas fa-hand-holding-heart"></i> Voluntariado</a>
-      <a href="impacto.html"><i class="fas fa-seedling"></i> Impacto</a>
+      <a href="impacto.php"><i class="fas fa-seedling"></i> Impacto</a>
       <a href="recursos.php"><i class="fas fa-folder-open"></i> Recursos</a>
       <a href="sobre-nosotros.php"><i class="fas fa-envelope"></i> Sobre Nosotros</a>
     </nav>

@@ -51,7 +51,7 @@
                 <p><strong>Hora:</strong> <?= date("g:i a", strtotime($evento['hora_evento'])) ?></p>
                 <p><strong>Lugar:</strong> <?= htmlspecialchars($evento['lugar_evento']) ?></p>
                 <p><strong>Cupos disponibles:</strong> <?= intval($evento['cupos']) ?></p>
-                <a href="#" class="btn">Registrarse</a>
+                <a href="#" class="btn btn-registrar" data-evento="<?= intval($evento['id_evento']) ?>">Registrarse</a>
               </div>
             </div>
           </div>

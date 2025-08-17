@@ -35,7 +35,9 @@
         </div>
         <div class="perfil-detalles">
           <p><strong>Correo:</strong> <?= htmlspecialchars($_SESSION['user_email']) ?></p>
-          <!-- Otros detalles del usuario -->
+          <p><strong>Dirección:</strong> <?= htmlspecialchars($_SESSION['user_address']) ?></p>
+          <p><strong>Edad:</strong> <?= htmlspecialchars($_SESSION['user_age']) ?></p>
+          <p><strong>Intereses:</strong> <?= htmlspecialchars($_SESSION['user_interests']) ?></p>
         </div>
       </div>
       <section class="seccion">

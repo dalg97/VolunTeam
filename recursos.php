@@ -29,7 +29,7 @@
   <main>
     <section class="seccion">
       <h2><i class="fas fa-folder-open"></i> Recursos para Voluntarios</h2>
-      <p>En esta sección puedes encontrar herramientas útiles para prepararte antes, durante y después de tus actividades como voluntari@:</p>
+      <p>En esta sección puedes encontrar herramientas útiles para prepararte antes, durante y después de tus actividades como voluntario:</p>
       <ul>
         <li>📄 <a href="pdf/guia_primeros_auxilios.pdf" target="_blank">Guía de primeros auxilios básica</a></li>
       <li>📝 <a href="pdf/manual_etica.pdf" target="_blank">Manual de ética y conducta voluntaria</a></li>
